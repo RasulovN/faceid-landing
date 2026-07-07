@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { LOGIN_URL, REGISTER_URL } from "@/lib/urls";
 import { useI18n } from "@/lib/i18n";
-import { IconMenu, IconX, LogoMark } from "@/components/icons";
+import { IconMenu, IconUser, IconX, LogoMark } from "@/components/icons";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
@@ -77,6 +77,14 @@ export default function Header() {
         <div className="flex items-center gap-1 md:hidden">
           <LanguageSwitcher />
           <ThemeToggle />
+          <a
+            href={LOGIN_URL}
+            aria-label={t.actions.login}
+            title={t.actions.login}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 dark:text-zinc-200 dark:hover:bg-zinc-800"
+          >
+            <IconUser className="h-5 w-5" />
+          </a>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-zinc-700 transition-colors hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
@@ -108,12 +116,7 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-3 flex flex-col gap-2 border-t border-zinc-100 pt-3 dark:border-zinc-800">
-            <a
-              href={LOGIN_URL}
-              className="rounded-xl border border-zinc-200 px-4 py-2.5 text-center text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
-            >
-              {t.actions.login}
-            </a>
+            {/* "Kirish" endi navbar'dagi user ikonkasi — bu yerda faqat asosiy CTA qoladi */}
             <a
               href={REGISTER_URL}
               className="rounded-xl bg-brand-600 px-4 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"

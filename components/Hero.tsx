@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { REGISTER_URL } from "@/lib/urls";
 import { useI18n } from "@/lib/i18n";
 import { IconArrowRight, IconCheck } from "@/components/icons";
+import HeroRobot from "@/components/ui/HeroRobot";
 
 const BARS = [45, 70, 55, 90, 65, 80, 60] as const;
 
@@ -141,6 +143,8 @@ export default function Hero() {
   const { t } = useI18n();
   const reduce = useReducedMotion();
   const h = t.hero;
+  // 3D robot yuklanib bo'lgach desktop'da mockup o'rnini unga bo'shatamiz
+  const [robotReady, setRobotReady] = useState(false);
 
   const rise = (delay: number) =>
     reduce
@@ -153,17 +157,59 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36">
+      {/* Asosiy fon: yuqoridan pastga silliq bazaviy qatlam */}
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-gradient-to-b from-brand-50 via-zinc-50/60 to-transparent dark:from-brand-950/40 dark:via-zinc-950/40"
+        className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-gradient-to-b from-brand-50/80 via-white/0 to-transparent dark:from-brand-950/30 dark:via-zinc-950/0"
+      />
+      {/* Brand nuri — o'ng yuqorida (robot ortida) */}
+      <div
+        aria-hidden
+        className="absolute -top-24 right-[-6rem] -z-10 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.20),transparent_62%)] blur-2xl dark:bg-[radial-gradient(circle,rgba(99,102,241,0.28),transparent_62%)]"
+      />
+      {/* Violet nuri — chap tomonda, matn ostida iliqlik */}
+      <div
+        aria-hidden
+        className="absolute -top-10 left-[-8rem] -z-10 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.14),transparent_60%)] blur-2xl dark:bg-[radial-gradient(circle,rgba(139,92,246,0.20),transparent_60%)]"
       />
       {/* Nozik nuqtali fon */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(79,70,229,0.07)_1px,transparent_0)] [background-size:32px_32px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(129,140,248,0.08)_1px,transparent_0)]"
       />
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
-        <div>
+
+      {/*
+        Hero fonidagi interaktiv NEXBOT roboti (faqat lg+).
+        Kontent grid'i pointer-events-none bo'lgani uchun bo'sh joylarda sichqoncha
+        harakati canvas'ga yetadi — robot boshi kursorni kuzatadi.
+      */}
+      <div
+        aria-hidden
+        style={{
+          // Radial mask: robot atrofi (o'ng-markaz) to'liq ko'rinadi, chetlardagi
+          // sahna nuri (jumladan chap-yuqoridagi oq dog') fonga singib yo'qoladi.
+          maskImage:
+            "radial-gradient(68% 72% at 72% 46%, #000 42%, rgba(0,0,0,0.35) 72%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(68% 72% at 72% 46%, #000 42%, rgba(0,0,0,0.35) 72%, transparent 100%)",
+        }}
+        className={`absolute inset-0 z-[1] hidden overflow-hidden transition-opacity duration-1000 lg:block ${
+          robotReady ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        {/* Robot orqasidagi brand aura */}
+        <div className="absolute right-[8%] top-1/2 -z-10 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-gradient-to-tr from-brand-600/25 via-brand-400/15 to-transparent blur-3xl dark:from-brand-500/30 dark:via-brand-500/10" />
+        {/* Robot o'ng-pastga surilib kattalashtiriladi — matn zonasi bo'sh qoladi */}
+        <div
+          className="h-full w-full"
+          style={{ transform: "translateX(25%) translateY(10%) scale(1.2)" }}
+        >
+          <HeroRobot onReady={() => setRobotReady(true)} />
+        </div>
+      </div>
+
+      <div className="relative z-[2] mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:pointer-events-none lg:grid-cols-2 lg:gap-10 lg:px-8">
+        <div className="lg:pointer-events-auto">
           <motion.span
             {...rise(0)}
             className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-semibold text-brand-700 dark:border-brand-600/30 dark:bg-brand-600/10 dark:text-brand-300"
@@ -219,9 +265,17 @@ export default function Hero() {
           initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.94, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className={reduce ? "" : "animate-float"}
+          className={`${robotReady ? "" : "lg:pointer-events-auto"} ${reduce ? "" : "animate-float"}`}
         >
-          <DashboardMockup />
+          {/* Robot tayyor bo'lgach desktop'da mockup silliq yo'qoladi (mobil'da qoladi).
+              framer-motion inline opacity qo'ymasligi uchun alohida o'ramda. */}
+          <div
+            className={`transition-opacity duration-700 ${
+              robotReady ? "lg:pointer-events-none lg:opacity-0" : ""
+            }`}
+          >
+            <DashboardMockup />
+          </div>
         </motion.div>
       </div>
     </section>

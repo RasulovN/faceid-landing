@@ -20,6 +20,7 @@ const uz = {
     tariffs: "Tariflar",
     faq: "Savol-javob",
     contact: "Aloqa",
+    quickNav: "Bo‘limlar bo‘ylab tezkor o‘tish",
   },
   actions: {
     login: "Kirish",
@@ -30,6 +31,14 @@ const uz = {
     closeMenu: "Menyuni yopish",
     toggleTheme: "Mavzuni almashtirish",
     language: "Til",
+    scrollTop: "Yuqoriga qaytish",
+  },
+  cookies: {
+    title: "Cookie va analitika",
+    message:
+      "Saytni yaxshilash uchun anonim analitika ma'lumotlarini yig'amiz: taxminiy hudud (IP bo'yicha), qurilma turi, tashrif vaqti va davomiyligi. Shaxsingizni aniqlovchi ma'lumotlar yig'ilmaydi. Rozimisiz?",
+    accept: "Roziman",
+    decline: "Rad etish",
   },
   hero: {
     badge: "O‘zbekiston bizneslari uchun davomat tizimi",
@@ -97,11 +106,13 @@ const uz = {
     eyebrow: "Bir platforma — barcha rollar",
     title: "Har bir foydalanuvchi uchun alohida ishlangan",
     subtitle: "Administrator, xodim va planshet — hammasi bitta ekotizimda uzviy bog‘langan.",
+    cta: "Batafsil ko‘rish",
     items: [
-      { tag: "Web panel", title: "Boshqaruv paneli", description: "Xodimlar, filiallar, ish jadvallari, jarima-bonus qoidalari va oylik — barchasi yagona zamonaviy paneldan. Rolga qarab huquqlar." },
-      { tag: "Mobil ilova", title: "Xodim ilovasi", description: "Xodim geolokatsiya va selfie orqali check-in qiladi, davomat tarixini, oylik hisobini va bildirishnomalarini ko‘radi." },
-      { tag: "Kiosk", title: "Planshet terminali", description: "Devordagi planshet — offline ishlaydigan, yuzni tanuvchi terminal. Internet uzilsa ham navbat saqlanadi." },
+      { tag: "Web panel", title: "Boshqaruv paneli", description: "Xodimlar, filiallar, ish jadvallari, jarima-bonus qoidalari va oylik — barchasi yagona zamonaviy paneldan. Rolga qarab huquqlar.", features: ["Jonli davomat lentasi", "Avtomatik oylik va jarima", "Rolga asoslangan huquqlar"] },
+      { tag: "Mobil ilova", title: "Xodim ilovasi", description: "Xodim geolokatsiya va selfie orqali check-in qiladi, davomat tarixini, oylik hisobini va bildirishnomalarini ko‘radi.", features: ["Selfie + GPS check-in", "Oylik va davomat tarixi", "Push bildirishnomalar"] },
+      { tag: "Kiosk", title: "Planshet terminali", description: "Devordagi planshet — offline ishlaydigan, yuzni tanuvchi terminal. Internet uzilsa ham navbat saqlanadi.", features: ["1 soniyada yuzni tanish", "Offline navbat saqlash", "Kirish/chiqish yo‘nalishi"] },
     ],
+    mock: { greeting: "Salom, Dilnoza", checkedIn: "Ishga keldingiz", office: "Bosh ofis", entry: "Kirish", welcome: "Xush kelibsiz", offlineReady: "Offline tayyor" },
   },
   stats: {
     title: "Raqamlarda samaradorlik",
@@ -186,10 +197,18 @@ export type Dict = typeof uz;
 
 const uzc: Dict = {
   brand: "FaceID Давомат",
-  nav: { features: "Имкониятлар", how: "Қандай ишлайди", tariffs: "Тарифлар", faq: "Савол-жавоб", contact: "Алоқа" },
+  nav: { features: "Имкониятлар", how: "Қандай ишлайди", tariffs: "Тарифлар", faq: "Савол-жавоб", contact: "Алоқа", quickNav: "Бўлимлар бўйлаб тезкор ўтиш" },
   actions: {
     login: "Кириш", startFree: "Бепул бошлаш", tryFree: "Бепул синаб кўриш", demo: "Демо кўриш",
     openMenu: "Менюни очиш", closeMenu: "Менюни ёпиш", toggleTheme: "Мавзуни алмаштириш", language: "Тил",
+    scrollTop: "Юқорига қайтиш",
+  },
+  cookies: {
+    title: "Cookie ва аналитика",
+    message:
+      "Сайтни яхшилаш учун аноним аналитика маълумотларини йиғамиз: тахминий ҳудуд (IP бўйича), қурилма тури, ташриф вақти ва давомийлиги. Шахсингизни аниқловчи маълумотлар йиғилмайди. Розимисиз?",
+    accept: "Розиман",
+    decline: "Рад этиш",
   },
   hero: {
     badge: "Ўзбекистон бизнеслари учун давомат тизими",
@@ -229,11 +248,13 @@ const uzc: Dict = {
   showcase: {
     eyebrow: "Бир платформа — барча роллар", title: "Ҳар бир фойдаланувчи учун алоҳида ишланган",
     subtitle: "Администратор, ходим ва планшет — ҳаммаси битта экотизимда узвий боғланган.",
+    cta: "Батафсил кўриш",
     items: [
-      { tag: "Web панел", title: "Бошқарув панели", description: "Ходимлар, филиаллар, иш жадваллари, жарима-бонус қоидалари ва ойлик — барчаси ягона замонавий панелдан. Ролга қараб ҳуқуқлар." },
-      { tag: "Мобил илова", title: "Ходим иловаси", description: "Ходим геолокация ва селфи орқали чек-ин қилади, давомат тарихини, ойлик ҳисобини ва билдиришномаларини кўради." },
-      { tag: "Киоск", title: "Планшет терминали", description: "Девордаги планшет — offline ишлайдиган, юзни танувчи терминал. Интернет узилса ҳам навбат сақланади." },
+      { tag: "Web панел", title: "Бошқарув панели", description: "Ходимлар, филиаллар, иш жадваллари, жарима-бонус қоидалари ва ойлик — барчаси ягона замонавий панелдан. Ролга қараб ҳуқуқлар.", features: ["Жонли давомат лентаси", "Автоматик ойлик ва жарима", "Ролга асосланган ҳуқуқлар"] },
+      { tag: "Мобил илова", title: "Ходим иловаси", description: "Ходим геолокация ва селфи орқали чек-ин қилади, давомат тарихини, ойлик ҳисобини ва билдиришномаларини кўради.", features: ["Селфи + GPS чек-ин", "Ойлик ва давомат тарихи", "Пуш билдиришномалар"] },
+      { tag: "Киоск", title: "Планшет терминали", description: "Девордаги планшет — offline ишлайдиган, юзни танувчи терминал. Интернет узилса ҳам навбат сақланади.", features: ["1 сонияда юзни таниш", "Offline навбат сақлаш", "Кириш/чиқиш йўналиши"] },
     ],
+    mock: { greeting: "Салом, Дилноза", checkedIn: "Ишга келдингиз", office: "Бош офис", entry: "Кириш", welcome: "Хуш келибсиз", offlineReady: "Offline тайёр" },
   },
   stats: {
     title: "Рақамларда самарадорлик", subtitle: "Қўлда табел юритишдан воз кечинг — тизим ўзи ҳисоблайди.",
@@ -293,10 +314,18 @@ const uzc: Dict = {
 
 const ru: Dict = {
   brand: "FaceID Учёт",
-  nav: { features: "Возможности", how: "Как это работает", tariffs: "Тарифы", faq: "Вопросы", contact: "Контакты" },
+  nav: { features: "Возможности", how: "Как это работает", tariffs: "Тарифы", faq: "Вопросы", contact: "Контакты", quickNav: "Быстрый переход по разделам" },
   actions: {
     login: "Войти", startFree: "Начать бесплатно", tryFree: "Попробовать бесплатно", demo: "Смотреть демо",
     openMenu: "Открыть меню", closeMenu: "Закрыть меню", toggleTheme: "Сменить тему", language: "Язык",
+    scrollTop: "Наверх",
+  },
+  cookies: {
+    title: "Cookie и аналитика",
+    message:
+      "Мы собираем анонимную аналитику для улучшения сайта: примерный регион (по IP), тип устройства, время и длительность визита. Персональные данные не собираются. Вы согласны?",
+    accept: "Согласен",
+    decline: "Отклонить",
   },
   hero: {
     badge: "Система учёта посещаемости для бизнеса Узбекистана",
@@ -336,11 +365,13 @@ const ru: Dict = {
   showcase: {
     eyebrow: "Одна платформа — все роли", title: "Продумано для каждого пользователя",
     subtitle: "Администратор, сотрудник и планшет — всё связано в единой экосистеме.",
+    cta: "Подробнее",
     items: [
-      { tag: "Web-панель", title: "Панель управления", description: "Сотрудники, филиалы, графики, правила штрафов-бонусов и зарплата — всё в одной современной панели. Права по ролям." },
-      { tag: "Моб. приложение", title: "Приложение сотрудника", description: "Сотрудник отмечается по геолокации и селфи, видит историю посещений, расчёт зарплаты и уведомления." },
-      { tag: "Киоск", title: "Планшет-терминал", description: "Настенный планшет — терминал распознавания лиц, работающий офлайн. Даже при обрыве интернета очередь сохраняется." },
+      { tag: "Web-панель", title: "Панель управления", description: "Сотрудники, филиалы, графики, правила штрафов-бонусов и зарплата — всё в одной современной панели. Права по ролям.", features: ["Лента посещений в реальном времени", "Автоматическая зарплата и штрафы", "Права на основе ролей"] },
+      { tag: "Моб. приложение", title: "Приложение сотрудника", description: "Сотрудник отмечается по геолокации и селфи, видит историю посещений, расчёт зарплаты и уведомления.", features: ["Чек-ин по селфи и GPS", "История зарплаты и посещений", "Push-уведомления"] },
+      { tag: "Киоск", title: "Планшет-терминал", description: "Настенный планшет — терминал распознавания лиц, работающий офлайн. Даже при обрыве интернета очередь сохраняется.", features: ["Распознавание лица за 1с", "Офлайн-очередь", "Направление вход/выход"] },
     ],
+    mock: { greeting: "Привет, Дилноза", checkedIn: "Вы отметились", office: "Главный офис", entry: "Вход", welcome: "Добро пожаловать", offlineReady: "Офлайн готов" },
   },
   stats: {
     title: "Эффективность в цифрах", subtitle: "Откажитесь от ручного табеля — система считает сама.",
@@ -400,10 +431,18 @@ const ru: Dict = {
 
 const en: Dict = {
   brand: "FaceID Attendance",
-  nav: { features: "Features", how: "How it works", tariffs: "Pricing", faq: "FAQ", contact: "Contact" },
+  nav: { features: "Features", how: "How it works", tariffs: "Pricing", faq: "FAQ", contact: "Contact", quickNav: "Quick section navigation" },
   actions: {
     login: "Log in", startFree: "Start free", tryFree: "Try for free", demo: "Watch demo",
     openMenu: "Open menu", closeMenu: "Close menu", toggleTheme: "Toggle theme", language: "Language",
+    scrollTop: "Back to top",
+  },
+  cookies: {
+    title: "Cookies & analytics",
+    message:
+      "We collect anonymous analytics to improve the site: approximate region (by IP), device type, visit time and duration. No personally identifying data is collected. Do you agree?",
+    accept: "Accept",
+    decline: "Decline",
   },
   hero: {
     badge: "Attendance system for businesses in Uzbekistan",
@@ -443,11 +482,13 @@ const en: Dict = {
   showcase: {
     eyebrow: "One platform — every role", title: "Crafted for every kind of user",
     subtitle: "Admin, employee and tablet — all connected in a single ecosystem.",
+    cta: "Explore more",
     items: [
-      { tag: "Web panel", title: "Admin dashboard", description: "Employees, branches, schedules, penalty-bonus rules and payroll — all from one modern panel. Role-based permissions." },
-      { tag: "Mobile app", title: "Employee app", description: "Employees check in via geolocation and selfie, and see attendance history, payroll and notifications." },
-      { tag: "Kiosk", title: "Tablet terminal", description: "A wall-mounted tablet — an offline-capable face-recognition terminal. The queue is kept even if the internet drops." },
+      { tag: "Web panel", title: "Admin dashboard", description: "Employees, branches, schedules, penalty-bonus rules and payroll — all from one modern panel. Role-based permissions.", features: ["Real-time attendance feed", "Automatic payroll & penalties", "Role-based permissions"] },
+      { tag: "Mobile app", title: "Employee app", description: "Employees check in via geolocation and selfie, and see attendance history, payroll and notifications.", features: ["Selfie + GPS check-in", "Payroll & attendance history", "Push notifications"] },
+      { tag: "Kiosk", title: "Tablet terminal", description: "A wall-mounted tablet — an offline-capable face-recognition terminal. The queue is kept even if the internet drops.", features: ["1-second face recognition", "Offline queue buffering", "Entry/exit direction"] },
     ],
+    mock: { greeting: "Hi, Dilnoza", checkedIn: "You're checked in", office: "Head office", entry: "Entry", welcome: "Welcome", offlineReady: "Offline ready" },
   },
   stats: {
     title: "Efficiency in numbers", subtitle: "Drop the manual timesheet — the system does the math.",

@@ -4,12 +4,14 @@
   "private": true,
   "description": "FaceID Davomat — marketing landing sahifasi",
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "node scripts/next-with-env-port.mjs dev",
     "build": "next build",
-    "start": "next start -p 3001",
+    "start": "node scripts/next-with-env-port.mjs start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.12.98",
     "framer-motion": "^12.42.2",
     "next": "~14.2.25",
     "next-themes": "^0.4.6",

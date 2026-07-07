@@ -8,6 +8,10 @@ import Tariffs from "@/components/Tariffs";
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import SectionNav from "@/components/ui/SectionNav";
+import StructuredData from "@/components/StructuredData";
 import { getTariffs } from "@/lib/tariffs";
 import { getSiteSettings } from "@/lib/site-settings";
 
@@ -16,6 +20,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <ScrollProgress />
       <Header />
       <main>
         <Hero />
@@ -28,6 +33,9 @@ export default async function HomePage() {
         <Contact settings={settings} />
       </main>
       <Footer settings={settings} />
+      <SectionNav />
+      <ScrollToTop />
+      <StructuredData />
     </>
   );
 }

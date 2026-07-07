@@ -62,6 +62,15 @@ export default function ContactForm() {
       noValidate
       className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:p-8"
     >
+      {/* Honeypot — odam ko'rmaydi, botlar to'ldiradi */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="space-y-5">
         <div>
           <label htmlFor="contact-name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">

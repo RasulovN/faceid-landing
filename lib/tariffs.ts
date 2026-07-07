@@ -1,3 +1,5 @@
+import { API_URL } from "./api-url";
+
 export interface Tariff {
   id: string;
   name: string;
@@ -18,8 +20,6 @@ interface ApiEnvelope<T> {
   data: T | null;
   error: { code: string; message: string } | null;
 }
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3000/api/v1";
 
 /**
  * Backend ishlamay qolgan holatda ko'rsatiladigan zaxira (fallback) tariflar.

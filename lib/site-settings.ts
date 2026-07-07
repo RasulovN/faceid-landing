@@ -1,3 +1,5 @@
+import { API_URL } from "./api-url";
+
 export interface SiteSettings {
   contactEmail: string;
   contactPhone: string;
@@ -16,8 +18,6 @@ interface ApiEnvelope<T> {
   data: T | null;
   error: { code: string; message: string } | null;
 }
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3000/api/v1";
 
 /** Backend ishlamaganda ko'rsatiladigan zaxira qiymatlar (matnlar i18n'dan olinadi, bular fallback). */
 export const FALLBACK_SETTINGS: SiteSettings = {

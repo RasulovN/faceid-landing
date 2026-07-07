@@ -22,7 +22,7 @@ pnpm start                   # http://localhost:3001
 
 | O'zgaruvchi | Tavsif | Default |
 | --- | --- | --- |
-| `NEXT_PUBLIC_API_URL` | Backend API bazaviy manzili | `http://localhost:3000/api/v1` |
+| `NEXT_PUBLIC_API_URL` | Backend API bazaviy manzili — faqat domen kifoya, `/api/v1` avtomatik qo'shiladi | `http://localhost:3000` |
 | `NEXT_PUBLIC_COMPANY_PANEL_URL` | Kompaniya paneli (login/register) | `http://localhost:5174` |
 
 ## Tuzilishi

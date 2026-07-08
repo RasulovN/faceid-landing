@@ -14,7 +14,7 @@
 
 /** Dev muhit uchun standart qiymatlar — .env berilmaganda ishlatiladi */
 export const DEV_DEFAULTS = {
-  siteUrl: "http://localhost:3001",
+  siteUrl: "http://localhost:4001",
   apiUrl: "http://localhost:3000",
   clientUrl: "http://localhost:5173",
 } as const;

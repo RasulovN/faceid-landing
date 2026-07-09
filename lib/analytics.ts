@@ -1,7 +1,8 @@
 /**
- * Tashrif analitikasi yordamchilari — faqat cookie-rozilikdan keyin ishlaydi.
- * visitorId (365 kun) qaytgan mehmonni, sessionId (tab sessiyasi) bitta
- * kirish davrini anglatadi. Hech qanday shaxsiy ma'lumot yig'ilmaydi.
+ * Tashrif analitikasi yordamchilari — OPT-OUT: anonim kuzatuv standart yoqiq,
+ * foydalanuvchi bannerda "Rad etish"ni bossa o'chadi (AnalyticsTracker shuni
+ * tekshiradi). visitorId (365 kun) qaytgan mehmonni, sessionId (tab sessiyasi)
+ * bitta kirish davrini anglatadi. Hech qanday shaxsiy ma'lumot yig'ilmaydi.
  */
 
 import { API_URL } from "@/lib/api-url";

@@ -10,9 +10,11 @@ const HEARTBEAT_MAX_MS = 30 * 60 * 1000;
 
 /**
  * Tashriflarni kuzatuvchi komponent (UI chizmaydi).
- * Faqat rozilik "granted" bo'lgandagina ishga tushadi: tashrifni yozadi va
- * sahifa ochiq turgan payt har 20 soniyada heartbeat yuboradi — davomiylik
- * shundan hisoblanadi. Tab yashiringanida keepalive bilan oxirgi signal ketadi.
+ * OPT-OUT model: anonim statistika (sahifa, hudud, qurilma) rozilik so'ralmasdanoq
+ * yoziladi — shaxsiy ma'lumot yig'ilmaydi (visitorId tasodifiy UUID). Foydalanuvchi
+ * bannerda "Rad etish"ni bossagina kuzatuv ishlamaydi. Tashrif yozilgach har 20
+ * soniyada heartbeat yuboriladi — davomiylik shundan hisoblanadi; tab
+ * yashiringanida keepalive bilan oxirgi signal ketadi.
  */
 export default function AnalyticsTracker() {
   const { locale } = useI18n();
@@ -46,7 +48,8 @@ export default function AnalyticsTracker() {
       if ((e as CustomEvent<string>).detail === "granted") start();
     };
 
-    if (getConsent() === "granted") start();
+    // "denied" bo'lmasa (hali qaror yo'q yoki granted) — kuzatuv darhol boshlanadi
+    if (getConsent() !== "denied") start();
     window.addEventListener(CONSENT_EVENT, onConsent);
     document.addEventListener("visibilitychange", onVisibility);
 

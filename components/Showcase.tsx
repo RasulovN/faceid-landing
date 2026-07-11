@@ -151,7 +151,7 @@ function MobileMock({ t }: { t: Dict }) {
     { d: "Chor", time: "08:57 – 18:20", late: false },
   ];
   return (
-    <div className="mx-auto w-[236px] rounded-[2.2rem] border-[6px] border-zinc-900 bg-zinc-900 shadow-xl dark:border-zinc-700">
+    <div className="mx-auto w-full max-w-[236px] rounded-[2.2rem] border-[6px] border-zinc-900 bg-zinc-900 shadow-xl dark:border-zinc-700">
       <div className="overflow-hidden rounded-[1.7rem] bg-gradient-to-b from-brand-50 to-white dark:from-zinc-900 dark:to-zinc-950">
         {/* status bar + notch */}
         <div className="relative flex items-center justify-between px-5 pt-2 text-[9px] font-semibold text-zinc-500 dark:text-zinc-400">
@@ -203,7 +203,7 @@ function MobileMock({ t }: { t: Dict }) {
 function KioskMock({ t }: { t: Dict }) {
   const m = t.showcase.mock;
   return (
-    <div className="mx-auto w-[300px] rounded-[1.6rem] border-[7px] border-zinc-900 bg-zinc-950 shadow-xl dark:border-zinc-700">
+    <div className="mx-auto w-full max-w-[300px] rounded-[1.6rem] border-[7px] border-zinc-900 bg-zinc-950 shadow-xl dark:border-zinc-700">
       <div className="relative aspect-[3/4] overflow-hidden rounded-[1rem] bg-zinc-950">
         {/* kamera fon */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(99,102,241,0.18),transparent_60%)]" />
@@ -260,7 +260,7 @@ export default function Showcase() {
   const Mock = MOCKS[active];
 
   return (
-    <section id="mahsulot" className="py-20 sm:py-24">
+    <section id="mahsulot" className="overflow-hidden py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">

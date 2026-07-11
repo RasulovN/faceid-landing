@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Dekorativ absolute elementlar tor ekranlarda gorizontal scroll ochmasin */
+body {
+  overflow-x: clip;
+}
+
 /* Sticky header balandligini hisobga olib, ankerga sakraganda bo'lim ko'rinib turadi */
 section[id] {
   scroll-margin-top: 5rem;

@@ -40,7 +40,7 @@ export default function Contact({ settings }: { settings: SiteSettings }) {
           <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400">{t.contact.subtitle}</p>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-8 lg:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-2">
           <Reveal from="left" className="space-y-4">
             {items.map((item) => (
               <div

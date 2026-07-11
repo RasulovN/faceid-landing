@@ -36,7 +36,7 @@ export default function Tariffs({ tariffs }: { tariffs: Tariff[] }) {
           <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400">{t.tariffs.subtitle}</p>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
           {tariffs.map((tariff, index) => {
             const highlighted = hasBusiness
               ? tariff.name.toLowerCase().includes("business")
@@ -46,7 +46,7 @@ export default function Tariffs({ tariffs }: { tariffs: Tariff[] }) {
                 <div
                   className={`relative flex h-full flex-col rounded-2xl border bg-white p-8 shadow-sm transition-all hover:shadow-lg dark:bg-zinc-900 ${
                     highlighted
-                      ? "border-2 border-brand-600 bg-gradient-to-b from-brand-50/60 to-white dark:from-brand-600/10 dark:to-zinc-900 lg:-translate-y-2"
+                      ? "border-2 border-brand-600 bg-gradient-to-b from-brand-50/60 to-white dark:from-brand-600/10 dark:to-zinc-900 md:-translate-y-2"
                       : "border-zinc-200 dark:border-zinc-800"
                   }`}
                 >

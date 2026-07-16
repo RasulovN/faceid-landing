@@ -42,7 +42,8 @@ function DashboardMock({ t }: { t: Dict }) {
     { label: h.statAbsent, value: "2", tone: "text-rose-600 dark:text-rose-400" },
   ];
   return (
-    <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    // Planshetda (lg dan past) mockup butun konteynerga cho'zilib ketmasin
+    <div className="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
       <div className="flex items-center gap-3 border-b border-zinc-100 px-4 py-3 dark:border-zinc-800">
         <div className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
@@ -84,8 +85,8 @@ function DashboardMock({ t }: { t: Dict }) {
               </div>
             ))}
           </div>
-          <div className="grid gap-2 lg:grid-cols-5">
-            <div className="space-y-1.5 rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 lg:col-span-3">
+          <div className="grid gap-2 sm:grid-cols-5">
+            <div className="space-y-1.5 rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 sm:col-span-3">
               <div className="flex items-center gap-1.5">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -116,7 +117,7 @@ function DashboardMock({ t }: { t: Dict }) {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 lg:col-span-2">
+            <div className="flex flex-col rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 sm:col-span-2">
               <p className="text-[9px] font-semibold uppercase tracking-wide text-zinc-400 dark:text-zinc-500">
                 {h.mockWeek}
               </p>

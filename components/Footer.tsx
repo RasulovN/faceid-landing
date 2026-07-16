@@ -25,8 +25,8 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+          <div className="sm:col-span-2">
             <a href="#" className="flex items-center gap-2.5" aria-label={`${t.brand} — bosh sahifa`}>
               <LogoMark className="h-8 w-8" />
               <span className="text-base font-bold tracking-tight text-zinc-900 dark:text-white">

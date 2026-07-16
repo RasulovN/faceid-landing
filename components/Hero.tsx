@@ -28,7 +28,8 @@ function DashboardMockup() {
   ];
 
   return (
-    <div className="relative">
+    // Planshetda (lg dan past) mockup butun konteynerga cho'zilib ketmasin
+    <div className="relative mx-auto w-full max-w-2xl">
       <div
         aria-hidden
         className="absolute -inset-8 -z-10 rounded-full bg-gradient-to-tr from-brand-600/25 via-brand-400/15 to-transparent blur-3xl dark:from-brand-500/30 dark:via-brand-500/10"
@@ -67,7 +68,7 @@ function DashboardMockup() {
               <p className="text-[9px] text-zinc-400 dark:text-zinc-500">06.07.2026 · 09:41</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {stats.map((s) => (
                 <div
                   key={s.label}
@@ -79,8 +80,8 @@ function DashboardMockup() {
               ))}
             </div>
 
-            <div className="grid gap-2 lg:grid-cols-5">
-              <div className="space-y-1.5 rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 lg:col-span-3">
+            <div className="grid gap-2 sm:grid-cols-5">
+              <div className="space-y-1.5 rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 sm:col-span-3">
                 <div className="flex items-center gap-1.5">
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -112,7 +113,7 @@ function DashboardMockup() {
                 ))}
               </div>
 
-              <div className="flex flex-col rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 lg:col-span-2">
+              <div className="flex flex-col rounded-xl border border-zinc-100 p-2.5 dark:border-zinc-800 sm:col-span-2">
                 <p className="text-[9px] font-semibold uppercase tracking-wide text-zinc-400 dark:text-zinc-500">
                   {h.mockWeek}
                 </p>

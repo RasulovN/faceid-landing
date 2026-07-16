@@ -122,7 +122,7 @@ export default function SectionNav() {
       onTouchMove={onTouchMove}
       onWheel={onWheel}
       style={{ height: ROW_H * 5 }}
-      className={`fixed left-1 top-20 z-40 flex touch-none select-none items-center overflow-hidden pl-1 pr-2 transition-all duration-300 md:hidden ${
+      className={`fixed left-1 top-20 z-40 flex touch-none select-none items-center overflow-hidden pl-1 pr-2 transition-all duration-300 lg:hidden ${
         visible ? "translate-x-0 opacity-100" : "pointer-events-none -translate-x-4 opacity-0"
       }`}
     >

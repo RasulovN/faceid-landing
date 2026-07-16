@@ -15,7 +15,7 @@ export default function Stats() {
           </h2>
           <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">{t.stats.subtitle}</p>
         </div>
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {t.stats.items.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.08} className="text-center">
               <p className="bg-gradient-to-r from-brand-600 to-violet-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent dark:from-brand-400 dark:to-violet-400 sm:text-5xl">

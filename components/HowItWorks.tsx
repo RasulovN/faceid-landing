@@ -27,7 +27,7 @@ export default function HowItWorks() {
             const Icon = ICONS[i];
             return (
               <Reveal key={step.title} delay={i * 0.12}>
-                <div className="relative h-full rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700">
+                <div className="relative h-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 lg:p-8">
                   <span
                     aria-hidden
                     className="absolute right-6 top-6 text-5xl font-extrabold text-zinc-100 dark:text-zinc-800"

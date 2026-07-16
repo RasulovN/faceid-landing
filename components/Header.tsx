@@ -45,7 +45,8 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Asosiy navigatsiya">
+        {/* To'liq nav faqat lg+ (planshetda 5 havola + tugmalar sig'maydi — hamburger qoladi) */}
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Asosiy navigatsiya">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -57,7 +58,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-1.5 md:flex">
+        <div className="hidden items-center gap-1.5 lg:flex">
           <LanguageSwitcher />
           <ThemeToggle />
           <a
@@ -74,7 +75,7 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="flex items-center gap-1 md:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
           <LanguageSwitcher />
           <ThemeToggle />
           <a
@@ -101,7 +102,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="border-t border-zinc-200 bg-white/95 px-4 pb-4 pt-2 backdrop-blur-lg dark:border-zinc-800 dark:bg-zinc-950/95 md:hidden"
+          className="border-t border-zinc-200 bg-white/95 px-4 pb-4 pt-2 backdrop-blur-lg dark:border-zinc-800 dark:bg-zinc-950/95 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobil navigatsiya">
             {navLinks.map((link) => (
